@@ -40,3 +40,4 @@ data/raw_large/
 Thumbs.db
 .vscode/
 .idea/
+mpu_linux/workload/pdm_bench
