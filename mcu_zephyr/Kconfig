@@ -1,0 +1,26 @@
+mainmenu "Reflex tick benchmark"
+
+config APP_PERIOD_US
+	int "Control period in microseconds"
+	default 10000
+
+config APP_CYCLES
+	int "Number of cycles to log (0 = run forever)"
+	default 10000
+
+config APP_LOG_QUEUE_DEPTH
+	int "Samples buffered between the reflex and logger threads"
+	default 128
+	help
+	  If the logger falls this far behind, samples are dropped and
+	  counted instead of blocking the reflex thread.
+
+config APP_REFLEX_PRIORITY
+	int "Reflex thread priority (cooperative when negative)"
+	default -2
+
+config APP_LOGGER_PRIORITY
+	int "Logger thread priority"
+	default 10
+
+source "Kconfig.zephyr"
